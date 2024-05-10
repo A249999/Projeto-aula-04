@@ -1,0 +1,118 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyP3Alq5CuAQJKcr1tD+8NUg",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/A249999/Projeto-aula-04/blob/main/CHAT_BOT_ALURA_GOOGLE\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import random\n",
+        "\n",
+        "def contar_piada_alura():\n",
+        "  piadas = [\n",
+        "    \"Por que o curso de Python na Alura é tão popular? Porque ele ensina a programar cobras charmosas!\",\n",
+        "    \"O que o professor de JavaScript da Alura disse para o aluno? Você está pronto para dominar o DOM?\",\n",
+        "    \"Qual é o framework favorito dos alunos da Alura? React? Vue? Angular? Não importa, o importante é aprender com qualidade!\",\n",
+        "  ]\n",
+        "  return random.choice(piadas)\n",
+        "\n",
+        "def jogar_quiz_alura():\n",
+        "  perguntas = [\n",
+        "    {\n",
+        "      \"pergunta\": \"Qual linguagem de programação é conhecida por sua sintaxe clara e legibilidade?\",\n",
+        "      \"opcoes\": [\"Python\", \"Java\", \"C++\", \"JavaScript\"],\n",
+        "      \"resposta\": \"Python\"\n",
+        "    },\n",
+        "    {\n",
+        "      \"pergunta\": \"Qual framework é amplamente utilizado para desenvolvimento web front-end?\",\n",
+        "      \"opcoes\": [\"React\", \"Spring Boot\", \"Django\", \"Flutter\"],\n",
+        "      \"resposta\": \"React\"\n",
+        "    },\n",
+        "    {\n",
+        "      \"pergunta\": \"Qual banco de dados NoSQL é conhecido por sua flexibilidade e escalabilidade?\",\n",
+        "      \"opcoes\": [\"MySQL\", \"PostgreSQL\", \"MongoDB\", \"Oracle\"],\n",
+        "      \"resposta\": \"MongoDB\"\n",
+        "    }\n",
+        "  ]\n",
+        "  pontuacao = 0\n",
+        "\n",
+        "  print(\"Bem-vindo ao Quiz da Alura!\")\n",
+        "\n",
+        "  for i, pergunta in enumerate(perguntas):\n",
+        "    print(f\"\\nPergunta {i+1}: {pergunta['pergunta']}\")\n",
+        "    for j, opcao in enumerate(pergunta[\"opcoes\"]):\n",
+        "      print(f\"{j+1}. {opcao}\")\n",
+        "\n",
+        "    resposta_usuario = input(\"Digite o número da sua resposta: \")\n",
+        "    if pergunta[\"opcoes\"][int(resposta_usuario) - 1] == pergunta[\"resposta\"]:\n",
+        "      print(\"Resposta correta!\")\n",
+        "      pontuacao += 1\n",
+        "    else:\n",
+        "      print(f\"Resposta incorreta. A resposta correta é: {pergunta['resposta']}\")\n",
+        "\n",
+        "  print(f\"\\nVocê acertou {pontuacao} de {len(perguntas)} perguntas!\")\n",
+        "\n",
+        "def conversar_alura():\n",
+        "  print(\"Vamos conversar sobre a Alura! O que te interessa?\")\n",
+        "  while True:\n",
+        "    assunto = input(\"> \")\n",
+        "    if assunto.lower() == \"tchau\":\n",
+        "      print(\"Foi legal conversar com você! Até mais! 😄\")\n",
+        "      break\n",
+        "    else:\n",
+        "      print(f\"Legal! {assunto} é um tema importante na Alura. O que você gostaria de saber?\")\n",
+        "\n",
+        "print(\"Olá! Eu sou um chatbot divertido da Alura aqui para te entreter. 😄\")\n",
+        "\n",
+        "while True:\n",
+        "  print(\"\\nO que você gostaria de fazer?\")\n",
+        "  print(\"1. Ouvir uma piada da Alura\")\n",
+        "  print(\"2. Jogar o Quiz da Alura\")\n",
+        "  print(\"3. Conversar sobre a Alura\")\n",
+        "  print(\"4. Sair\")\n",
+        "\n",
+        "  escolha = input(\"Digite o número da sua escolha: \")\n",
+        "\n",
+        "  if escolha == \"1\":\n",
+        "    print(contar_piada_alura())\n",
+        "  elif escolha == \"2\":\n",
+        "    jogar_quiz_alura()\n",
+        "  elif escolha == \"3\":\n",
+        "    conversar_alura()\n",
+        "  elif escolha == \"4\":\n",
+        "    print(\"Até mais! Bons estudos na Alura! 😄\")\n",
+        "    break\n",
+        "  else:\n",
+        "    print(\"Opção inválida. Tente novamente.\")"
+      ],
+      "metadata": {
+        "id": "0aWAPj5eICTW"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
